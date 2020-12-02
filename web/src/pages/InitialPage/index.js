@@ -1,32 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Header from "../../components/Header";
+import CalculatorImg from "../../assets/Calculator-rafiki.svg";
 
 import { Link } from "react-router-dom";
 
 import "./styles.css";
 
 function InitialPage() {
-  const [counter, setCounter] = useState(0);
-
-  useEffect(() => {
-    console.log("teste");
-    if (counter == 10) {
-      console.log("fimmm");
-    }
-  }, [counter]);
-
   return (
-    <div>
+    <div className="initalPage-container">
+      <img src={CalculatorImg} alt="calculator" />
       <Header />
-      <h3>{counter}</h3>
-      <div
-        onClick={() => {
-          setCounter(counter + 1);
-        }}
-        className="sum"
-      >
-        Somar
-      </div>
     </div>
   );
 }

@@ -1,5 +1,12 @@
-.sum {
-  background-color: red;
-  width: 100px;
-  padding: 10px;
+.initalPage-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.initalPage-container img {
+  width: 400px;
 }
