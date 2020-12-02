@@ -1,0 +1,104 @@
+.matrix-container {
+  display: flex;
+  flex-direction: column;
+}
+.matrix-container h2 {
+  align-self: center;
+  color: var(--primary);
+  margin-bottom: 0;
+  font-size: 36px;
+}
+.matrix-container p {
+  align-self: center;
+  margin-bottom: 60px;
+  font-size: 20px;
+}
+
+.matrix-content {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.matrix .table-cell {
+  border-style: solid;
+  border-color: var(--primary);
+}
+
+.matrix .table-cell input {
+  width: 40px;
+  height: 40px;
+  border-style: none;
+  font-size: 20px;
+  text-align: center;
+}
+
+.matrix .table-cell-selected input {
+  width: 40px;
+  height: 40px;
+  border-style: none;
+  font-size: 20px;
+  background-color: var(--secondary);
+  color: #fff;
+}
+
+.matrix .table-cell-selected {
+  border-style: solid;
+  border-color: var(--secondary);
+  background-color: var(--secondary);
+}
+
+.matrix table tbody tr td input:focus {
+  border-style: none;
+  outline: none;
+}
+
+.matrix-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 130px;
+  justify-content: space-between;
+}
+.matrix-input label {
+  font-size: 20px;
+}
+.matrix-input input {
+  width: 50px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.matrix-input button {
+  background-color: var(--yellow);
+  color: #000;
+  border-style: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in;
+}
+
+.matrix-input button:hover {
+  opacity: 0.8;
+}
+.sum-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sum-result p {
+  background-color: var(--secondary);
+  color: #fff;
+  padding: 20px;
+  font-weight: 800;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.sum-result h3 {
+  color: var(--primary);
+  margin: 0;
+}

@@ -10,3 +10,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+html {
+  background-color: #e8e9ed;
+}
+
+:root {
+  --primary: #473bf0;
+  --secondary: #6665dd;
+  --gray: #acadbc;
+  --yellow: #f6bd60;
+  --dark: #000500;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
