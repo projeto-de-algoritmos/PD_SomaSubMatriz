@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import {findMaxSumSubmatrix} from '../../utils/maxSubmatrix'
 import "./styles.css";
 
 function Matrix() {
@@ -77,7 +77,7 @@ function Matrix() {
             }}
           />
 
-          <button>Calcular</button>
+          <button onClick={findMaxSumSubmatrix}>Calcular</button>
         </div>
 
         <div className="sum-result">
