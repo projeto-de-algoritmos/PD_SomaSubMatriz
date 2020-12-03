@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from "react";
-import {findMaxSumSubmatrix} from '../../utils/maxSubmatrix'
+import { findMaxSumSubmatrix } from "../../utils/maxSubmatrix";
 import "./styles.css";
 
 function Matrix() {
   const [matrixDimension, setMatrixDimension] = useState(0);
   const [matrixValues, setMatrixValues] = useState([]);
+  const [calculousResult, setCalculousResult] = useState({});
 
-    useEffect(()=>{
-      initMatrix();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[matrixDimension])
+  useEffect(() => {
+    initMatrix();
+    setCalculousResult({});
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [matrixDimension]);
+
+  useEffect(() => {
+    console.log(calculousResult);
+  }, [calculousResult]);
 
   const initMatrix = () => {
     let newMatrix = [];
@@ -23,6 +29,20 @@ function Matrix() {
     setMatrixValues(newMatrix);
   };
 
+  const getMatrixClass = (i, j) => {
+    const hasCalculous = calculousResult.sum;
+    if (!hasCalculous) return "table-cell";
+
+    if (
+      i >= calculousResult.result.rowStart &&
+      i <= calculousResult.result.rowEnd &&
+      j >= calculousResult.result.colStart &&
+      j <= calculousResult.result.colEnd
+    )
+      return "table-cell-selected";
+    else return "table-cell";
+  };
+
   const renderMatrix = () => {
     let matrix = [];
     if (matrixDimension > 0) {
@@ -30,14 +50,14 @@ function Matrix() {
         let columns = [];
         for (let j = 0; j < matrixDimension; j++) {
           columns.push(
-            <td id={`${i},${j}`} className="table-cell">
+            <td className={getMatrixClass(i, j)}>
               <input
                 defaultValue={matrixValues[i] && matrixValues[i][j]}
                 type="number"
-                onChange={(event)=>{
-                  let newMatrix = [...matrixValues]; 
-                  newMatrix[i][j] = Number(event.target.value); 
-                  setMatrixValues(newMatrix)
+                onChange={(event) => {
+                  let newMatrix = [...matrixValues];
+                  newMatrix[i][j] = Number(event.target.value);
+                  setMatrixValues(newMatrix);
                 }}
               />
             </td>
@@ -77,12 +97,20 @@ function Matrix() {
             }}
           />
 
-          <button onClick={findMaxSumSubmatrix}>Calcular</button>
+          <button
+            onClick={() =>
+              setCalculousResult(
+                findMaxSumSubmatrix(matrixValues, matrixDimension)
+              )
+            }
+          >
+            Calcular
+          </button>
         </div>
 
         <div className="sum-result">
           <h3>Soma da total da submatriz</h3>
-          <p>0</p>
+          <p>{calculousResult.sum || 0}</p>
         </div>
       </div>
     </div>
