@@ -36,7 +36,7 @@ Se preferir, acesse o [site](https://pd-submatrix.netlify.app/) para utilizar a 
 
 - 1 -> Execute um git clone do repositório
 
-- 2 -> Navegue até a pasta app através de seu terminal
+- 2 -> Navegue até a pasta web através de seu terminal
 
 - 3 -> Execute o comando `yarn install`
 
@@ -44,7 +44,7 @@ Se preferir, acesse o [site](https://pd-submatrix.netlify.app/) para utilizar a 
 
 #### Para executar o projeto locamente, siga os seguintes passos:
 
-- 1 -> Acesse a pasta app/
+- 1 -> Acesse a pasta web/
 
 - 2 -> Execute o comando `yarn start` ou `npm start`
 
