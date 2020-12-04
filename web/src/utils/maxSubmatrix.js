@@ -6,7 +6,7 @@ export function findMaxSumSubmatrix(matrix, dimension) {
 
   for (let i = 0; i <= dimension; i++) {
     for (let j = 0; j <= dimension; j++) {
-      if (i == 0 || j == 0) S[i][j] = 0;
+      if (i === 0 || j === 0) S[i][j] = 0;
       else
         S[i][j] =
           S[i - 1][j] + S[i][j - 1] - S[i - 1][j - 1] + matrix[i - 1][j - 1];
